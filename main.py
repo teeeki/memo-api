@@ -1,13 +1,12 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.routers import memos
+from app.api import memos
 
 app = FastAPI()
 
-# 開発用 CORS（本番では allow_origins を限定すること）
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],            # 例: ["http://localhost:3000"] に限定するのが安全
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
