@@ -1,0 +1,8 @@
+### ユーザ登録
+POST http://localhost:8000/api/auth/signup
+Content-Type: application/json
+
+{
+  "username": "t-teieki",
+  "password": "Password1!"
+}

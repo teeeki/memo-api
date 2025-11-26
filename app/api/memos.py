@@ -21,9 +21,12 @@ async def create_memo():
 
 @router.get("/get-memos", response_model=List[MemoResponse], tags=["memo"])
 async def get_memos_endpoint(
-    user_id: List[int] = Query(None), 
-    session: Session = Depends(get_db)
+    user_id: List[int] = Query(None),
+    session: Session = Depends(get_db),
+    # current_username: str = Depends(get_current_username),
 ):
+    # 認証済みであることを保証するための依存性。現状はフィルターしないが今後拡張可能。
+    # _ = current_username
     result = MemoCRUD.get_memos_by_user_ids(session, user_id=user_id)
     return [MemoResponse(**memo) for memo in result]
 

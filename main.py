@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.api import memos
+from app.api import memos, auth
 
 app = FastAPI()
 
@@ -17,3 +17,4 @@ def root():
     return {"message": "Hello from FastAPI backend!"}
 
 app.include_router(memos.router, prefix="/api", tags=["memos"])
+app.include_router(auth.router, prefix="/api", tags=["auth"])
