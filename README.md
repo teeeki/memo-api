@@ -1,4 +1,6 @@
-# メモ共有アプリのAPI
+# WebAPI
+一覧
+<img width="1383" height="599" alt="image" src="https://github.com/user-attachments/assets/3506c3d9-7ef5-4d71-a0d8-be73d7b5b77f" />
 
 ## 環境構築
 - python仮想環境の作成と有効化（PowerShell）
