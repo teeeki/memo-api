@@ -9,15 +9,9 @@ from pwdlib import PasswordHash
 from pydantic import BaseModel
 from passlib.context import CryptContext
 
-
-# to get a string like this run:
-# openssl rand -hex 32
 SECRET_KEY = ""
-ALGORITHM = "argon2"
+ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 30
-
-
-    
 
 ''' ハッシュ値関連 '''
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
@@ -34,9 +28,7 @@ def verify_password(password, hashed_password):
     return pwd_context.verify(sha, hashed_password)
 
 
-def create_access_token(
-    data: dict, expires_delta: timedelta
-):
+def create_access_token(data: dict, expires_delta: timedelta):
     """ アクセストークンの作成 """
     to_encode = data.copy()
     expires = datetime.now(timezone.utc) + expires_delta
