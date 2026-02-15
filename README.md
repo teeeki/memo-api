@@ -1,5 +1,5 @@
 # WebAPI
-一覧（2026/2/15辞時点）
+一覧（2026/2/15時点）
 <img width="1383" height="599" alt="image" src="https://github.com/user-attachments/assets/3506c3d9-7ef5-4d71-a0d8-be73d7b5b77f" />
 
 # メモの作成API
